@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import SongForm from "./SongForm.jsx";
 
 /* https://github.com/JMPerez/spotify-web-api-js */
 
@@ -58,6 +59,7 @@ class App extends Component {
                         Check Now Playing
                     </button>
                 )}
+                <SongForm />
             </div>
         );
     }
