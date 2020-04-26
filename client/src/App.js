@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import SongForm from "./SongForm.jsx";
+import SongForm from "./song_form.jsx";
+//import firebase from './firebase.js';
 
 /* https://github.com/JMPerez/spotify-web-api-js */
 
@@ -44,6 +45,10 @@ class App extends Component {
         });
     }
     render() {
+        /* EXAMPLE USAGE OF FIREBASE DB:
+        firebase.firestore().collection("test").doc("testdoc").set({
+            name: "test"
+        });*/
         return (
             <div className="App">
                 <a href="http://localhost:8888"> Login to Spotify </a>
