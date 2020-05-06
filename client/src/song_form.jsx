@@ -6,16 +6,16 @@ class SongForm extends Component {
         super(props);
         this.state = {
             selectedGenres: [],
-            acoustic: 50,
-            dance: 50,
+            acousticness: 50,
+            danceability: 50,
             energy: 50,
             loud: 50,
-            instrument: 50,
-            mood: 50,
-            duration: 50,
-            live: 50,
-            popular: 50,
-            tempo: 50,
+            instrumentalness: 50,
+            valence: 50,
+            duration: 10,
+            liveness: 50,
+            popularity: 50,
+            tempo: 100,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,41 +27,23 @@ class SongForm extends Component {
         this.setState({ selectedGenres });
     }
 
-    handleSliderMove(event,i) {
-        switch(i){
-            case 0:
-                this.setState({acoustic: event.target.value});
+    handleSliderMove(event) {
+        switch(event.target.id){
+            case "tempo":
+                if(event.target.value == event.target.min)
+                    this.setState({[event.target.id]: '<=' + event.target.value});
+                else if(event.target.value == event.target.max)
+                    this.setState({[event.target.id]: '>=' + event.target.value});
+                else
+                    this.setState({[event.target.id]: event.target.value})
                 break;
-            case 1:
-                this.setState({dance: event.target.value});
-                break;
-            case 2:
-                this.setState({energy: event.target.value});
-                break;
-            case 3:
-                this.setState({loud: event.target.value});
-                break;
-            case 4:
-                this.setState({instrument: event.target.value});
-                break;
-            case 5:
-                this.setState({mood: event.target.value});
-                break;
-            case 6:
-                this.setState({duration: event.target.value});
-                break;
-            case 7:
-                this.setState({live: event.target.value});
-                break;
-            case 8:
-                this.setState({popular: event.target.value});
-                break;
-            case 9:
-                this.setState({tempo: event.target.value});
+            default:
+                this.setState({ [event.target.id]: event.target.value});
                 break;
         }
     }
 
+                
     handleSubmit(event) {
         event.preventDefault();
         const element = (
@@ -69,15 +51,15 @@ class SongForm extends Component {
                 <br />
                 Genres Selected: {this.state.selectedGenres.map((tag, i) => <span key={i}>
                     {i > 0 && ", "} {tag} </span>)} <br />
-                Acousticness: {this.state.acoustic} <br />
-                Danceability: {this.state.dance} <br />
+                Acousticness: {this.state.acousticness} <br />
+                Danceability: {this.state.danceability} <br />
                 Energy: {this.state.energy} <br />
-                Loudness: {this.state.loud} <br />
-                Instrumentalness: {this.state.instrument} <br />
-                Mood/Positivity: {this.state.mood} <br />
-                Duration: {this.state.duration} <br />
-                Liveness: {this.state.live} <br />
-                Popularity: {this.state.popular} <br />
+                Loudness: {this.state.loudness} <br />
+                Instrumentalness: {this.state.instrumentalness} <br />
+                Mood/Positivity: {this.state.valence} <br />
+                Duration (minutes): {this.state.duration} <br />
+                Liveness: {this.state.liveness} <br />
+                Popularity: {this.state.popularity} <br />
                 Tempo (BPM): {this.state.tempo} <br />
 
             </React.Fragment>
@@ -92,16 +74,16 @@ class SongForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     Genres: <br />
                     <GenresSelector onGenreUpdate={this.handleGenreSelect} /><br /><br />
-                    Acousticness:  <NumberSlider onChange={e => this.handleSliderMove(e,0)} /><br /><br />
-                    Danceability:  <NumberSlider onChange={e => this.handleSliderMove(e,1)} /><br /><br />
-                    Energy:  <NumberSlider onChange={e => this.handleSliderMove(e,2)} /><br /><br />
-                    Loudness:  <NumberSlider onChange={e => this.handleSliderMove(e,3)} /><br /><br />
-                    Instrumentalness:  <NumberSlider onChange={e => this.handleSliderMove(e,4)} /><br /><br />
-                    Mood/Positivity:  <NumberSlider onChange={e => this.handleSliderMove(e,5)} /><br /><br />
-                    Duration:  <NumberSlider onChange={e => this.handleSliderMove(e,6)} /><br /><br />
-                    Liveness:  <NumberSlider onChange={e => this.handleSliderMove(e,7)} /><br /><br />
-                    Popularity:  <NumberSlider onChange={e => this.handleSliderMove(e,8)} /><br /><br />
-                    Tempo (BPM):  <NumberSlider onChange={e => this.handleSliderMove(e,9)} /><br /><br />
+                    Acousticness:  <NumberSlider min="0" max="100" id="acousticness" onChange={this.handleSliderMove}/><br /><br />
+                    Danceability:  <NumberSlider min="0" max="100" id="danceability" onChange={this.handleSliderMove} /><br /><br />
+                    Energy:  <NumberSlider min="0" max="100" id="energy" onChange={this.handleSliderMove} /><br /><br />
+                    Loudness:  <NumberSlider min="0" max="100" id="loudness" onChange={this.handleSliderMove} /><br /><br />
+                    Instrumentalness:  <NumberSlider min="0" max="100" id="instrumentalness" onChange={this.handleSliderMove} /><br /><br />
+                    Mood/Positivity:  <NumberSlider min="0" id="valence" max="100" onChange={this.handleSliderMove} /><br /><br />
+                    Duration (minutes):  <NumberSlider min="0" id="duration" max="20" onChange={this.handleSliderMove} /><br /><br />
+                    Liveness:  <NumberSlider min="0" max="100" id="liveness" onChange={this.handleSliderMove} /><br /><br />
+                    Popularity:  <NumberSlider min="0" max="100" id="popularity" onChange={this.handleSliderMove} /><br /><br />
+                    Tempo (BPM):  <NumberSlider min="50" max="150" id="tempo" onChange={this.handleSliderMove} /><br /><br />
                     <input type="submit" value="Submit" />
                 </form>
                 <div id="result_box"></div>
@@ -113,7 +95,13 @@ class SongForm extends Component {
 class NumberSlider extends Component {
     constructor(props) {
         super(props);
-        this.state = { value: 50 };
+        var midpoint = (Number(props.max) + Number(props.min))/2;
+        this.state = { 
+            value: midpoint,
+            max: props.max,
+            min: props.min,
+            id: props.id
+        };
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -125,7 +113,7 @@ class NumberSlider extends Component {
     render() {
         return (
             <div>
-                <input type="range" name="number_select" value={this.state.value} onChange={this.handleChange} min="0" max="100" step="1" />
+                <input type="range" name="number_select" value={this.state.value} id={this.state.id} onChange={this.handleChange} min={this.state.min} max={this.state.max} step="1" />
                 <label> { this.state.value } </label>
             </div>
         );
