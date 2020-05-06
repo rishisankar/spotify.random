@@ -6,14 +6,14 @@ class SongForm extends Component {
         super(props);
         this.state = {
             selectedGenres: [],
-            acousticness: 50,
-            danceability: 50,
-            energy: 50,
-            loud: 50,
-            instrumentalness: 50,
-            valence: 50,
-            duration: 10,
-            liveness: 50,
+            acousticness: .5,
+            danceability: .5,
+            energy: .5,
+            loudness: .5,
+            instrumentalness: .5,
+            valence: .5,
+            duration: 660000,
+            liveness: .5,
             popularity: 50,
             tempo: 100,
         }
@@ -28,19 +28,21 @@ class SongForm extends Component {
     }
 
     handleSliderMove(event) {
-        switch(event.target.id){
+        var convertedVal = 0;
+        switch(event.target.id)
+        {
+            case "duration":
+                convertedVal = Number(event.target.value)*6000;
+                break;
+            case "popularity":
             case "tempo":
-                if(event.target.value == event.target.min)
-                    this.setState({[event.target.id]: '<=' + event.target.value});
-                else if(event.target.value == event.target.max)
-                    this.setState({[event.target.id]: '>=' + event.target.value});
-                else
-                    this.setState({[event.target.id]: event.target.value})
+                convertedVal = event.target.value;
                 break;
             default:
-                this.setState({ [event.target.id]: event.target.value});
+                convertedVal = parseFloat(event.target.value)/100;
                 break;
         }
+        this.setState({ [event.target.id]: convertedVal});
     }
 
                 
@@ -57,7 +59,7 @@ class SongForm extends Component {
                 Loudness: {this.state.loudness} <br />
                 Instrumentalness: {this.state.instrumentalness} <br />
                 Mood/Positivity: {this.state.valence} <br />
-                Duration (minutes): {this.state.duration} <br />
+                Duration (ms): {this.state.duration} <br />
                 Liveness: {this.state.liveness} <br />
                 Popularity: {this.state.popularity} <br />
                 Tempo (BPM): {this.state.tempo} <br />
@@ -80,7 +82,7 @@ class SongForm extends Component {
                     Loudness:  <NumberSlider min="0" max="100" id="loudness" onChange={this.handleSliderMove} /><br /><br />
                     Instrumentalness:  <NumberSlider min="0" max="100" id="instrumentalness" onChange={this.handleSliderMove} /><br /><br />
                     Mood/Positivity:  <NumberSlider min="0" id="valence" max="100" onChange={this.handleSliderMove} /><br /><br />
-                    Duration (minutes):  <NumberSlider min="0" id="duration" max="20" onChange={this.handleSliderMove} /><br /><br />
+                    Duration (minutes):  <NumberSlider min="1" id="duration" max="21" onChange={this.handleSliderMove} /><br /><br />
                     Liveness:  <NumberSlider min="0" max="100" id="liveness" onChange={this.handleSliderMove} /><br /><br />
                     Popularity:  <NumberSlider min="0" max="100" id="popularity" onChange={this.handleSliderMove} /><br /><br />
                     Tempo (BPM):  <NumberSlider min="50" max="150" id="tempo" onChange={this.handleSliderMove} /><br /><br />
