@@ -6,7 +6,16 @@ class SongForm extends Component {
         super(props);
         this.state = {
             selectedGenres: [],
-            slider: 50
+            acoustic: 50,
+            dance: 50,
+            energy: 50,
+            loud: 50,
+            instrument: 50,
+            mood: 50,
+            duration: 50,
+            live: 50,
+            popular: 50,
+            tempo: 50,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,17 +27,59 @@ class SongForm extends Component {
         this.setState({ selectedGenres });
     }
 
-    handleSliderMove(event) {
-        this.setState({slider: event.target.value});
+    handleSliderMove(event,i) {
+        switch(i){
+            case 0:
+                this.setState({acoustic: event.target.value});
+                break;
+            case 1:
+                this.setState({dance: event.target.value});
+                break;
+            case 2:
+                this.setState({energy: event.target.value});
+                break;
+            case 3:
+                this.setState({loud: event.target.value});
+                break;
+            case 4:
+                this.setState({instrument: event.target.value});
+                break;
+            case 5:
+                this.setState({mood: event.target.value});
+                break;
+            case 6:
+                this.setState({duration: event.target.value});
+                break;
+            case 7:
+                this.setState({live: event.target.value});
+                break;
+            case 8:
+                this.setState({popular: event.target.value});
+                break;
+            case 9:
+                this.setState({tempo: event.target.value});
+                break;
+        }
     }
 
     handleSubmit(event) {
         event.preventDefault();
         const element = (
             <React.Fragment>
+                <br />
                 Genres Selected: {this.state.selectedGenres.map((tag, i) => <span key={i}>
                     {i > 0 && ", "} {tag} </span>)} <br />
-                Number Chosen: {this.state.slider} 
+                Acousticness: {this.state.acoustic} <br />
+                Danceability: {this.state.dance} <br />
+                Energy: {this.state.energy} <br />
+                Loudness: {this.state.loud} <br />
+                Instrumentalness: {this.state.instrument} <br />
+                Mood/Positivity: {this.state.mood} <br />
+                Duration: {this.state.duration} <br />
+                Liveness: {this.state.live} <br />
+                Popularity: {this.state.popular} <br />
+                Tempo (BPM): {this.state.tempo} <br />
+
             </React.Fragment>
         );
         ReactDOM.render(element, document.getElementById('result_box'));
@@ -41,7 +92,16 @@ class SongForm extends Component {
                 <form onSubmit={this.handleSubmit}>
                     Genres: <br />
                     <GenresSelector onGenreUpdate={this.handleGenreSelect} /><br /><br />
-                    <NumberSlider onChange={this.handleSliderMove} /><br />
+                    Acousticness:  <NumberSlider onChange={e => this.handleSliderMove(e,0)} /><br /><br />
+                    Danceability:  <NumberSlider onChange={e => this.handleSliderMove(e,1)} /><br /><br />
+                    Energy:  <NumberSlider onChange={e => this.handleSliderMove(e,2)} /><br /><br />
+                    Loudness:  <NumberSlider onChange={e => this.handleSliderMove(e,3)} /><br /><br />
+                    Instrumentalness:  <NumberSlider onChange={e => this.handleSliderMove(e,4)} /><br /><br />
+                    Mood/Positivity:  <NumberSlider onChange={e => this.handleSliderMove(e,5)} /><br /><br />
+                    Duration:  <NumberSlider onChange={e => this.handleSliderMove(e,6)} /><br /><br />
+                    Liveness:  <NumberSlider onChange={e => this.handleSliderMove(e,7)} /><br /><br />
+                    Popularity:  <NumberSlider onChange={e => this.handleSliderMove(e,8)} /><br /><br />
+                    Tempo (BPM):  <NumberSlider onChange={e => this.handleSliderMove(e,9)} /><br /><br />
                     <input type="submit" value="Submit" />
                 </form>
                 <div id="result_box"></div>
