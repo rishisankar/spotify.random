@@ -19,7 +19,9 @@ class App extends Component {
         this.state = {
             loggedIn: token ? true : false,
             nowPlaying: { name: "Not Checked", albumArt: "" },
+            query: {}
         };
+        this.getRecommendations = this.getRecommendations.bind(this);
     }
     getHashParams() {
         var hashParams = {};
@@ -44,6 +46,11 @@ class App extends Component {
             });
         });
     }
+
+    getRecommendations(event){
+
+    };
+
     render() {
         /* EXAMPLE USAGE OF FIREBASE DB:
         firebase.firestore().collection("test").doc("testdoc").set({
@@ -64,7 +71,7 @@ class App extends Component {
                         Check Now Playing
                     </button>
                 )}
-                <SongForm />
+                <SongForm onSubmit={this.getRecommendations}/>
             </div>
         );
     }

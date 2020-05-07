@@ -43,6 +43,7 @@ class SongForm extends Component {
                 break;
         }
         this.setState({ [event.target.id]: convertedVal});
+        this.props.onSubmit(event);
     }
 
                 
