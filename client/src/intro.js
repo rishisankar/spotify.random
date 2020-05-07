@@ -9,7 +9,8 @@ class Intro extends Component{
 		start: true
 	}
 
-	componentDidMount(){
+
+	componentDidMount() {
 		var scene = new THREE.Scene();
 		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, .1, 1000);
 		var renderer = new THREE.WebGLRenderer();
@@ -29,25 +30,15 @@ class Intro extends Component{
 		animate();
 	}
 
-	updateStart(){
-		this.setState({start: false});
-	}
+
 
 	render() {
 		if(this.state.start)
-			return(
-				<body>
-					<div style={{zIndex: 2, position: 'absolute', justifyContent: 'center'}}>
-						<h1> Welcome to spotify.random! </h1>
-						<h2> press "space" to continue </h2>
-					</div>
-					<div ref={ref => (this.mount = ref)} />	
-				</body>
-			);
-		if(!this.state.start && !this.state.finish)
 			return (
-
+			<div>
+				<TextBox />
 				<div ref={ref => (this.mount = ref)} />
+			</div>
 			);
 		else
 			return(<Redirect to="/djboard" />);
@@ -55,5 +46,40 @@ class Intro extends Component{
 }
 
 
+
+class TextBox extends Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			messageNumber: 0,
+		};
+		this.messages = ["Welcome to spotify.random! press 'space' to continue", 
+					"My name is Insert_Cute_Name, and I'm here to guide you through the site!",
+					"Spotify.random is a place for you to discover new music that matches your unique taste.",
+					"Each song is customized perfectly to you-- no more scouring bad playlists in search for the one.",
+					"To start, choose a genre. Then, select the attributes that set your song apart.",
+					"You'll receive 3 songs that fit your description. If you want to continue your musical journey, just refresh to start the process all over again!",
+					"What do you think? Ready to discover the song of your dreams?"];
+		this.updateNumber = this.updateNumber.bind(this);
+	}
+
+	updateNumber(event) {
+		event.preventDefault();
+		console.log("hi");
+		if(event.keyCode === 32 && this.state.messageNumber == 0)
+		{
+			this.setState({messageNumber: this.state.messageNumber+1});
+			console.log(this.state.messageNumber);
+		}
+	}
+
+	render(){
+		return(
+			<div style={{display: 'flex', position: 'absolute', justifyContent: 'center', alignItems: 'center'}}>
+				<h1> {this.messages[this.state.messageNumber]} </h1>
+			</div>
+		);
+	}
+}
 
 export default Intro;
