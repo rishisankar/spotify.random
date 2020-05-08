@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Intro from './intro';
-import DjBoard from './djboard'
+import DjBoard from './djboard';
+import Visualizer from './visualizer';
 import * as serviceWorker from './serviceWorker';
 import {Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 const routing = (
 	<Router>
 		<Switch>
-			<Route path="/DjBoard" component={DjBoard} />
+			<Route path="/djboard" component={DjBoard} />
+			<Route path="/visualizer" component={Visualizer} />
 			<Route path="/" component={Intro} />
 		</Switch>
 	</Router>

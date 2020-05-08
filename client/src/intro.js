@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import * as THREE from 'three';
 import { Redirect } from "react-router-dom";
 import ReactDOM from "react-dom";
-import './intro.css';
 import Typewriter from 'typewriter-effect';
 import GLTFLoader from 'three-gltf-loader';
 
@@ -25,7 +24,7 @@ class Intro extends Component{
 
 		var catloader = new GLTFLoader();
 		catloader.load("../models/cat.gltf",
-			function(gltf) {
+			function ( gltf ) {
 				scene.add(gltf.scene);
 				console.log("added cat");
 			}
@@ -94,7 +93,7 @@ class TextBox extends Component{
 
 	render(){
 		return(
-			<div style={{display: 'flex', position: 'absolute', justifyContent: 'center', alignItems: 'center'}} class="textbox">
+			<div style={{display: 'flex', position: 'absolute', justifyContent: 'center', alignItems: 'center'}} >
 				<Typewriter options={{strings: this.messages[this.state.messageNumber], autoStart: true, delay: 40}}/>
 			</div>
 		);

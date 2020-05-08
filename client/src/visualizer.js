@@ -12,7 +12,7 @@ class Visualizer extends Component{
 		if(!this.state.finished)
 			return (<h1> This is Visual Scene </h1>);
 		if(this.state.returnHome)
-			return(<Redirect to="/");
+			return(<Redirect to="/" />);
 		else{
 			return(<Redirect to="/djboard" />);
 		}
