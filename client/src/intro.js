@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Typewriter from 'typewriter-effect';
 import GLTFLoader from 'three-gltf-loader';
+import catPath from './models/cat.gltf';
 
 class Intro extends Component{
 	state = {
@@ -23,7 +24,7 @@ class Intro extends Component{
     	camera.position.z = 5;
 
 		var catloader = new GLTFLoader();
-		catloader.load("../models/cat.gltf",
+		catloader.load(catPath,
 			function ( gltf ) {
 				scene.add(gltf.scene);
 				console.log("added cat");
