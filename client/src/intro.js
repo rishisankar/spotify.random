@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import * as THREE from 'three';
 import { Redirect } from "react-router-dom";
 import ReactDOM from "react-dom";
+import './intro.css';
+import Typewriter from 'typewriter-effect';
+import GLTFLoader from 'three-gltf-loader';
 
 class Intro extends Component{
 	state = {
@@ -11,16 +14,23 @@ class Intro extends Component{
 
 
 	componentDidMount() {
+
 		var scene = new THREE.Scene();
 		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, .1, 1000);
 		var renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		this.mount.appendChild( renderer.domElement );
 		scene.background = new THREE.Color(0xf5cedd);
-		var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    	var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-    	var cube = new THREE.Mesh( geometry, material );
     	camera.position.z = 5;
+
+		var catloader = new GLTFLoader();
+		catloader.load("../models/cat.gltf",
+			function(gltf) {
+				scene.add(gltf.scene);
+				console.log("added cat");
+			}
+		);
+
 		var animate = function () {
 			requestAnimationFrame( animate );
 
@@ -60,23 +70,32 @@ class TextBox extends Component{
 					"To start, choose a genre. Then, select the attributes that set your song apart.",
 					"You'll receive 3 songs that fit your description. If you want to continue your musical journey, just refresh to start the process all over again!",
 					"What do you think? Ready to discover the song of your dreams?"];
-		this.updateNumber = this.updateNumber.bind(this);
+
+		this.startIntro = this.startIntro.bind(this)
+		document.addEventListener('keydown',this.startIntro);
 	}
 
-	updateNumber(event) {
+	startIntro(event) {
 		event.preventDefault();
-		console.log("hi");
 		if(event.keyCode === 32 && this.state.messageNumber == 0)
 		{
 			this.setState({messageNumber: this.state.messageNumber+1});
-			console.log(this.state.messageNumber);
 		}
 	}
 
+	componentDidUpdate(){
+		console.log(this.state.messageNumber);
+		if(this.state.messageNumber > 0 && this.state.messageNumber < 6)
+		{
+			this.interval = setTimeout(() => this.setState({messageNumber: this.state.messageNumber + 1}),  6000);
+		}
+	}
+
+
 	render(){
 		return(
-			<div style={{display: 'flex', position: 'absolute', justifyContent: 'center', alignItems: 'center'}}>
-				<h1> {this.messages[this.state.messageNumber]} </h1>
+			<div style={{display: 'flex', position: 'absolute', justifyContent: 'center', alignItems: 'center'}} class="textbox">
+				<Typewriter options={{strings: this.messages[this.state.messageNumber], autoStart: true, delay: 40}}/>
 			</div>
 		);
 	}
