@@ -8,9 +8,13 @@ import catPath from './models/cat.gltf';
 import './intro.css'
 
 class Intro extends Component{
-	state = {
-		finish: false,
-		start: true
+
+	constructor(props){
+		super(props);
+		this.state = {
+			start: true
+		};
+		this.handleFinish = this.handleFinish.bind(this);
 	}
 
 
@@ -82,18 +86,22 @@ class Intro extends Component{
 
 	}
 
+	handleFinish(event) {
+		this.setState({start: false});
+	}
+
 
 
 	render() {
 		if(this.state.start)
 			return (
 			<div>
-				<TextBox />
+				<TextBox onChange={this.handleFinish} />
 				<div ref={ref => (this.mount = ref)} />
 			</div>
 			);
 		else
-			return(<Redirect to="/djboard" />);
+			return(<Redirect push to="/djboard" />);
 	}
 }
 
@@ -104,6 +112,7 @@ class TextBox extends Component{
 		super(props);
 		this.state = {
 			messageNumber: 0,
+			textState: true
 		};
 		this.messages = [
 			"<span class=\"text_title\">welcome to spotify.random!</span><br /> press 'space' to continue",
@@ -115,9 +124,10 @@ class TextBox extends Component{
 			"you'll receive 3 songs that fit your description. if you want to continue\
 				 your musical journey, just refresh to start the process all over again!",
 			"what do you think? ready to discover the song of your dreams?",
-		"yes or heck yes"];
+			"yes or heck yes"];
 
-		this.startIntro = this.startIntro.bind(this)
+		this.startIntro = this.startIntro.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 		document.addEventListener('keydown',this.startIntro);
 	}
 
@@ -154,14 +164,24 @@ class TextBox extends Component{
 		{
 			this.interval = setTimeout(() => this.setState({messageNumber: this.state.messageNumber + 1}),  intervalLength);
 		}
+		else if(this.state.messageNumber == 6)
+		{
+			this.setState({messageNumber: this.state.messageNumber +1, textState: false});
+		}
 	}
 
+	handleClick(event) {
+		this.props.onChange(event);
+	}
 
 	render(){
 		return(
 
 			<div id="speech_bubble" >
-				<Typewriter options={{strings: this.messages[this.state.messageNumber], autoStart: true, delay: 60}}/>
+				{this.state.textState && <Typewriter options={{strings: this.messages[this.state.messageNumber], autoStart: true, delay: 60}}/>}
+				{!this.state.textState && this.messages[6]} <br />
+				{!this.state.textState && <button onClick={this.handleClick} >yes</button>} <br />
+				{!this.state.textState && <button onClick={this.handleClick} >heck yes!</button>}
 			</div>
 
 

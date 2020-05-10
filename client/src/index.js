@@ -7,15 +7,17 @@ import Visualizer from './visualizer';
 import * as serviceWorker from './serviceWorker';
 import {Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
-const routing = (
-	<Router>
+var browserHistory = Router.browserHistory;
+
+var routing = (
+	<Router history={browserHistory}>
 		<Switch>
 			<Route path="/djboard" component={DjBoard} />
 			<Route path="/visualizer" component={Visualizer} />
 			<Route path="/" component={Intro} />
 		</Switch>
 	</Router>
-)
+);
 
 
 ReactDOM.render(routing, document.getElementById('root'));
