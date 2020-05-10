@@ -13,7 +13,9 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "three": "^0.116.1",
-    "typescript": "^3.8.3"
+    "three-gltf-loader": "^1.111.0",
+    "typescript": "^3.8.3",
+    "typewriter-effect": "^2.13.1"
   },
   "scripts": {
     "start": "(cd ../authorization_code && node app.js) & react-scripts start",

@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { Redirect } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Typewriter from 'typewriter-effect';
-import GLTFLoader from 'three-gltf-loader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import catPath from './models/cat.gltf';
 
 class Intro extends Component{
