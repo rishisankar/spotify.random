@@ -141,24 +141,7 @@ class TextBox extends Component{
 
 	componentDidUpdate(){
 		console.log(this.state.messageNumber);
-		var intervalLength;
-		switch(this.state.messageNumber) {
-			case 2:
-				intervalLength = 7580;
-				break;
-			case 3:
-				intervalLength = 7200;
-				break;
-			case 5:
-				intervalLength = 12560;
-				break;
-			case 6:
-					intervalLength = 12560;
-					break;
-
-			default:
-				intervalLength = 6000;
-		}
+		var intervalLength = this.messages[this.state.messageNumber].length * 90;
 
 		if(this.state.messageNumber > 0 && this.state.messageNumber < 6)
 		{
