@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as THREE from "three";
 import { Redirect } from "react-router-dom";
 import ReactDOM from "react-dom";
+<<<<<<< HEAD
 import Typewriter from "typewriter-effect";
 import GLTFLoader from "three-gltf-loader";
 import catPath from "./models/cat.gltf";
@@ -51,6 +52,59 @@ class Intro extends Component {
             );
         else return <Redirect to="/djboard" />;
     }
+=======
+import Typewriter from 'typewriter-effect';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import catPath from './models/cat.gltf';
+
+class Intro extends Component{
+	state = {
+		finish: false,
+		start: true
+	}
+
+
+	componentDidMount() {
+
+		var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, .1, 1000);
+		var renderer = new THREE.WebGLRenderer();
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		this.mount.appendChild( renderer.domElement );
+		scene.background = new THREE.Color(0xf5cedd);
+    	camera.position.z = 5;
+
+		var catloader = new GLTFLoader();
+		catloader.load(catPath,
+			function ( gltf ) {
+				scene.add(gltf.scene);
+				console.log("added cat");
+			}
+		);
+
+		var animate = function () {
+			requestAnimationFrame( animate );
+
+			renderer.render(scene, camera);
+		};
+
+		animate();
+	}
+
+
+
+	render() {
+		if(this.state.start)
+			return (
+			<div>
+				<TextBox />
+				<div ref={ref => (this.mount = ref)} />
+			</div>
+			);
+		else
+			return(<Redirect to="/djboard" />);
+	}
+>>>>>>> 4037b7494ac5624204b5b46cdff92b41b98ebd8f
 }
 
 class TextBox extends Component {
