@@ -1,18 +1,4 @@
-<<<<<<< HEAD
-.Text {
-    background: white;
-    height: 60px;
-    width: 400px;
-    padding: 20px;
-    border: darkgrey;
-    border-radius: 30px;
-    border-style: solid;
-    border-width: 3px;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    margin: auto;
-=======
-@import url('https://fonts.googleapis.com/css2?family=Alef&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alef&display=swap");
 
 #speech_bubble {
     position: absolute;
@@ -26,10 +12,10 @@
     margin-top: 50px;
     background-color: white;
     border-radius: 40px;
-    border: 10px solid #CBF8FF;
+    border: 10px solid #cbf8ff;
     text-align: center;
 
-    font-family: 'Alef', sans-serif;
+    font-family: "Alef", sans-serif;
     font-size: 2.1vw;
     padding-left: 2%;
     padding-right: 2%;
@@ -43,5 +29,4 @@
 .Typewriter {
     display: table-cell;
     vertical-align: middle;
->>>>>>> 8edd42b017ddd09ef929ef2f0a8740a23104903c
 }
