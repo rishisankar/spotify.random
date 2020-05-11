@@ -1,0 +1,13 @@
+.Text {
+    background: white;
+    height: 60px;
+    width: 400px;
+    padding: 20px;
+    border: darkgrey;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: auto;
+}
