@@ -21,7 +21,7 @@
     "typewriter-effect": "^2.13.1"
   },
   "scripts": {
-    "start": "(cd ../authorization_code && node app.js) & react-scripts start",
+    "start": "(cd ../authorization_code && node app.js) & (BROWSER=none react-scripts start)",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

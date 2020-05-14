@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as THREE from "three";
-import { Redirect } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import ReactDOM from "react-dom";
 import Typewriter from "typewriter-effect";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
@@ -15,7 +15,10 @@ class Intro extends Component {
             start: true,
         };
         this.handleFinish = this.handleFinish.bind(this);
+        const {token} = useParams();
     }
+
+    
 
     componentDidMount() {
         var scene = new THREE.Scene();
@@ -134,9 +137,10 @@ class TextBox extends Component {
 
     componentDidUpdate() {
         console.log(this.state.messageNumber);
-        var intervalLength =
-            this.messages[this.state.messageNumber].length * 90;
-
+        if(this.state.messageNumber < 8) {
+                var intervalLength =
+                    this.messages[this.state.messageNumber].length * 90;
+        }
         if (this.state.messageNumber > 0 && this.state.messageNumber < 6) {
             this.interval = setTimeout(
                 () =>
@@ -173,7 +177,7 @@ class TextBox extends Component {
                 {!this.state.textState && (
                     <Button variant="success" onClick={this.handleClick}>
                         {" "}
-                        Yes
+                        yes
                     </Button>
                 )}{" "}
                 {!this.state.textState && (

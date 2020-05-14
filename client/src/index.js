@@ -5,7 +5,7 @@ import Intro from "./intro";
 import DjBoard from "./djboard";
 import Visualizer from "./visualizer";
 import * as serviceWorker from "./serviceWorker";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Route, Switch, useParams, BrowserRouter as Router } from "react-router-dom";
 import Bootstrap from "bootstrap/dist/css/bootstrap.css";
 
 var browserHistory = Router.browserHistory;
@@ -19,6 +19,8 @@ var routing = (
         </Switch>
     </Router>
 );
+
+
 
 ReactDOM.render(routing, document.getElementById("root"));
 

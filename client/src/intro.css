@@ -30,3 +30,7 @@
     display: table-cell;
     vertical-align: middle;
 }
+
+.btn {
+    margin: 10px;
+}
