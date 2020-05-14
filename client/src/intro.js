@@ -15,7 +15,7 @@ class Intro extends Component {
             start: true,
         };
         this.handleFinish = this.handleFinish.bind(this);
-        const {token} = useParams();
+        
     }
 
     
