@@ -13,9 +13,9 @@ var cors = require("cors");
 var querystring = require("querystring");
 var cookieParser = require("cookie-parser");
 
-var client_id = "46a59896269f4022845f86ae86fbc5ee"; // Your client id
-var client_secret = "9b5c6bdac71e45bca8cbaea0bf86f0f5"; // Your secret
-var redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
+var client_id = "39ca797415f84106a2925c00c50821f0"; // Your client id
+var client_secret = "acb471e039314317b1c7d99e9cf9c2a1"; // Your secret
+var redirect_uri = "http://localhost:3000/djboard"; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -46,11 +46,11 @@ app.get("/login", function (req, res) {
     res.cookie(stateKey, state);
 
     // your application requests authorization
-    var scope = "user-read-private user-read-email";
+    var scope = "user-read-private user-read-email user-read-currently-playing user-read-playback-state";
     res.redirect(
         "https://accounts.spotify.com/authorize?" +
             querystring.stringify({
-                response_type: "code",
+                response_type: "token",
                 client_id: client_id,
                 scope: scope,
                 redirect_uri: redirect_uri,
@@ -79,7 +79,7 @@ app.get("/callback", function (req, res) {
         var authOptions = {
             url: "https://accounts.spotify.com/api/token",
             form: {
-                code: code,
+                code: token,
                 redirect_uri: redirect_uri,
                 grant_type: "authorization_code",
             },
@@ -111,7 +111,7 @@ app.get("/callback", function (req, res) {
 
                 // we can also pass the token to the browser to make requests from there
                 res.redirect(
-                    "http://localhost:3000/#" +
+                    "http://localhost:3000/djboard" +
                         querystring.stringify({
                             access_token: access_token,
                             refresh_token: refresh_token,
@@ -155,6 +155,7 @@ app.get("/refresh_token", function (req, res) {
         }
     });
 });
+
 
 console.log("Listening on 8888");
 app.listen(8888);

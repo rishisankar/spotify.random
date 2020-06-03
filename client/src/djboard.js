@@ -5,37 +5,70 @@ import ReactDOM from "react-dom";
 import { Redirect } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import './djboard.css';
+import { spotifyApi } from './App.js'
 
 class DjBoard extends Component {
 	constructor(props) {
 		super(props);
+		const params = this.getHashParams();
+		const token = params.access_token;
+		if (token) {
+			spotifyApi.setAccessToken(token);
+		}
 		this.state = {
-			continueButton: false,
+			continueButton: true,
 			showRecommendations: false,
 			selectedSong: [],
+			accessToken: token,
+			songState: null
 		};
 		this.getRecommendations = this.getRecommendations.bind(this);
 	}
+
+	getHashParams() {
+		 var hashParams = {};
+		 var e, r = /([^&;=]+)=?([^&;]*)/g,
+				 q = window.location.hash.substring(1);
+		 e = r.exec(q)
+		 while (e) {
+				hashParams[e[1]] = decodeURIComponent(e[2]);
+				e = r.exec(q);
+		 }
+		 return hashParams;
+	 }
+
 
 	componentDidMount() {
 		//do three js stuff
 	}
 
 	getRecommendations(event, songState) {
-		//do api stuff
-		//setState to redirect
-		this.setState({ showRecommendations: true });
+		this.setState({songState: songState, showRecommendations: true, continueButton: false });
 	}
 
 	render() {
-		if (!this.state.continueButton)
+		if (this.state.continueButton)
 			return (
 				<div>
 					<SongForm onSubmit={this.getRecommendations} />
 				</div>
 			);
 		else {
-			return <Redirect push to="/visualizer" />;
+			return <Redirect push to={{
+            pathname: '/visualizer',
+            state: { acousticness: this.state.songState.acousticness,
+							selectedGenres: this.state.songState.selectedGenres,
+						danceability: this.state.songState.danceability,
+						energy: this.state.songState.energy,
+						loudness: this.state.songState.loudness,
+						instrumentalness: this.state.songState.instrumentalness,
+						valence: this.state.songState.valence,
+						duration: this.state.songState.duration,
+						liveness: this.state.songState.liveness,
+						popularity: this.state.songState.popularity,
+						tempo: this.state.songState.tempo,
+					 	accessToken: this.state.accessToken}
+        }} />;
 		}
 	}
 }
@@ -44,17 +77,17 @@ class SongForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedGenres: [],
-			acousticness: 0.5,
-			danceability: 0.5,
-			energy: 0.5,
-			loudness: 0.5,
-			instrumentalness: 0.5,
-			valence: 0.5,
-			duration: 660000,
-			liveness: 0.5,
-			popularity: 50,
-			tempo: 100,
+				selectedGenres: [],
+				acousticness: 0.5,
+				danceability: 0.5,
+				energy: 0.5,
+				loudness: 0.5,
+				instrumentalness: 0.5,
+				valence: 0.5,
+				duration: 660000,
+				liveness: 0.5,
+				popularity: 50,
+				tempo: 100,
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -81,7 +114,7 @@ class SongForm extends Component {
 				break;
 		}
 		this.setState({ [event.target.id]: convertedVal });
-		this.props.onSubmit(event, this.state);
+
 	}
 
 	handleSubmit(event) {
@@ -108,18 +141,23 @@ class SongForm extends Component {
                 Tempo (BPM): {this.state.tempo} <br />
 			</React.Fragment>
 		);
-		ReactDOM.render(element, document.getElementById("result_box"));
+		//	ReactDOM.render(element, document.getElementById("result_box"));
+		this.props.onSubmit(event, this.state);
 	}
 
 	render() {
 		return (
-			<div id="song_form_container">
-				<form onSubmit={this.handleSubmit}>
+			<div id="song_form_container" >
+			<a href='http://localhost:8888' > Login to Spotify </a>
+				<form action="https://accounts.spotify.com/authorize?client_id=39ca797415f84106a2925c00c50821f0&redirect_uri=http:%2F%2Flocalhost:3000%2Fvisualizer&scope=user-read-private%20user-read-email%20user-read-currently-playing%20user-read-playback-state&response_type=token" method="get" onSubmit={this.handleSubmit}>
 					Genres: <br />
 					<GenresSelector onGenreUpdate={this.handleGenreSelect} />
 					<br />
 					<br />
-                    Acousticness:{" "}
+                    <h2>Acousticness:{" "}</h2>
+											<span class="extra">
+										How acoustic a song is
+           (from folksy ballads to electronic beats)</span>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -128,7 +166,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Danceability:{" "}
+                    <h2>Danceability:{" "}</h2>
+											<span class="extra">
+										How much the song makes you want to dance
+(from lay in bed and groove to shake your hips and move)</span>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -137,7 +178,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Energy:{" "}
+                  <h2>  Energy:{" "}</h2>
+										<span class="extra">
+									The intensity and activity of a song
+(from soft and gentle to loud and noisy)</span>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -146,7 +190,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Loudness:{" "}
+                  <h2>  Loudness:{" "}</h2>
+										<span class="extra">
+									How loud the song is
+(from tunes for sleep to screaming headbangers)</span>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -155,7 +202,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Instrumentalness:{" "}
+                  <h2>  Instrumentalness:{" "}</h2>
+										<span class="extra">
+									Ratio of words to music
+(from spoken word to instrumental)</span>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -164,7 +214,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Mood/Positivity:{" "}
+                <h2>    Mood/Positivity:{" "}</h2>
+									<span class="extra">
+								How (positive?) the song makes you feel
+				 (from breakup ballads to sunny wake-up tunes)</span>
 					<NumberSlider
 						min="0"
 						id="valence"
@@ -173,7 +226,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Duration (minutes):{" "}
+                <h2>    Duration (minutes):{" "}</h2>
+									<span class="extra">
+								How long the song is, in minutes</span>
+           (0 to 20?)
 					<NumberSlider
 						min="1"
 						id="duration"
@@ -182,7 +238,11 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Liveness:{" "}
+                <h2>    Liveness:{" "}</h2>
+									<span class="extra">
+								The presence of a live audience
+(from polished studio recordings to raging mosh pits)</span>
+
 					<NumberSlider
 						min="0"
 						max="100"
@@ -191,7 +251,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Popularity:{" "}
+                <h2>    Popularity:{" "}			<span class="extra">	How many plays a song has
+				(from underground discovery to number one hit)</span></h2>
+
+
 					<NumberSlider
 						min="0"
 						max="100"
@@ -200,7 +263,9 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    Tempo (BPM):{" "}
+                <h2>    Tempo (BPM):{" "}	<span class="extra">	How fast the song is, in BPM
+		(from lullaby to disco fever) </span></h2>
+
 					<NumberSlider
 						min="50"
 						max="150"
@@ -275,7 +340,7 @@ class GenresSelector extends Component {
 			<Form className='genres'>
 				<Form.Group>
 					<Form.Label>Genre Selector</Form.Label>
-					<Form.Control as='select' multiple
+					<Form.Control id="genre_id" as='select' multiple
 						size="10"
 						onChange={this.handleChange}>
 						<option value="acoustic">acoustic</option>

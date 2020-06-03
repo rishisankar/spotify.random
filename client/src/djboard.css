@@ -1,13 +1,40 @@
 .sliders{
 	width: 500px;
 	padding: 30px;
-	margin: 20px;
+	margin: auto;
 	border: 1px solid black;
+	text-align: center;
+}
+.form-control, .form-control-10 {
+	height: 4999px;
+}
+#genre_id {
+	height: 15em;
+	text-align: center;
+}
+.genres{
+	margin:  auto;
+
+margin-left: auto;
+margin-right: auto;
+	width: 25%;
+	border: 1px solid black;
+	height: 18em;
+
+	text-align: center;
+
 }
 
-.genres{
-	margin: 20px;
-	padding: 30px;
-	border: 1px solid black;
-	height: 200px;
+#song_form_container {
+	text-align: center;
+}
+.h2 {
+	font-size: 1em;
+}
+.extra {
+    display: none;
+}
+
+h2:hover .extra {
+    display: inline-block;
 }

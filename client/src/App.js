@@ -6,7 +6,8 @@ import SongForm from "./song_form.jsx";
 /* https://github.com/JMPerez/spotify-web-api-js */
 
 import SpotifyWebApi from "spotify-web-api-js";
-const spotifyApi = new SpotifyWebApi();
+var spotifyApi = new SpotifyWebApi();
+declare var spotifyApi: any;
 
 class App extends Component {
     constructor() {
@@ -78,3 +79,4 @@ class App extends Component {
 }
 
 export default App;
+export {spotifyApi};

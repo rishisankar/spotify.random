@@ -1,0 +1,847 @@
+{
+  "tracks": [
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+            },
+            "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+            "id": "4NHQUGzhtTLFvgF5SZesLK",
+            "name": "Tove Lo",
+            "type": "artist",
+            "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/6jggnLM3SdDnjQ3GWmIZ4L"
+        },
+        "href": "https://api.spotify.com/v1/albums/6jggnLM3SdDnjQ3GWmIZ4L",
+        "id": "6jggnLM3SdDnjQ3GWmIZ4L",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2735a032c46b63b202e76ebaffe",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e025a032c46b63b202e76ebaffe",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048515a032c46b63b202e76ebaffe",
+            "width": 64
+          }
+        ],
+        "name": "BLUE LIPS (lady wood phase II)",
+        "release_date": "2017-11-17",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:6jggnLM3SdDnjQ3GWmIZ4L"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+          },
+          "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+          "id": "4NHQUGzhtTLFvgF5SZesLK",
+          "name": "Tove Lo",
+          "type": "artist",
+          "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 208390,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "SEUM71700917"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/5rUETOajWWAqpjamjDD4cT"
+      },
+      "href": "https://api.spotify.com/v1/tracks/5rUETOajWWAqpjamjDD4cT",
+      "id": "5rUETOajWWAqpjamjDD4cT",
+      "is_local": false,
+      "is_playable": true,
+      "name": "cycles",
+      "popularity": 47,
+      "preview_url": null,
+      "track_number": 10,
+      "type": "track",
+      "uri": "spotify:track:5rUETOajWWAqpjamjDD4cT"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5yG7ZAZafVaAlMTeBybKAL"
+            },
+            "href": "https://api.spotify.com/v1/artists/5yG7ZAZafVaAlMTeBybKAL",
+            "id": "5yG7ZAZafVaAlMTeBybKAL",
+            "name": "Iggy Azalea",
+            "type": "artist",
+            "uri": "spotify:artist:5yG7ZAZafVaAlMTeBybKAL"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/6lBTYoX7ZzU2Xbf8RHAv0u"
+        },
+        "href": "https://api.spotify.com/v1/albums/6lBTYoX7ZzU2Xbf8RHAv0u",
+        "id": "6lBTYoX7ZzU2Xbf8RHAv0u",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27338e4867491f7b9aafef34d21",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0238e4867491f7b9aafef34d21",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d0000485138e4867491f7b9aafef34d21",
+            "width": 64
+          }
+        ],
+        "name": "The New Classic",
+        "release_date": "2014-01-01",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:6lBTYoX7ZzU2Xbf8RHAv0u"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5yG7ZAZafVaAlMTeBybKAL"
+          },
+          "href": "https://api.spotify.com/v1/artists/5yG7ZAZafVaAlMTeBybKAL",
+          "id": "5yG7ZAZafVaAlMTeBybKAL",
+          "name": "Iggy Azalea",
+          "type": "artist",
+          "uri": "spotify:artist:5yG7ZAZafVaAlMTeBybKAL"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5CCwRZC6euC8Odo6y9X8jr"
+          },
+          "href": "https://api.spotify.com/v1/artists/5CCwRZC6euC8Odo6y9X8jr",
+          "id": "5CCwRZC6euC8Odo6y9X8jr",
+          "name": "Rita Ora",
+          "type": "artist",
+          "uri": "spotify:artist:5CCwRZC6euC8Odo6y9X8jr"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 209423,
+      "explicit": true,
+      "external_ids": {
+        "isrc": "GBUM71401093"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/71vsEyBd4X1D5BUmLdFSVH"
+      },
+      "href": "https://api.spotify.com/v1/tracks/71vsEyBd4X1D5BUmLdFSVH",
+      "id": "71vsEyBd4X1D5BUmLdFSVH",
+      "is_local": false,
+      "is_playable": true,
+      "linked_from": {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/7pNC5ZIKtwUK0ReSpM3P9f"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7pNC5ZIKtwUK0ReSpM3P9f",
+        "id": "7pNC5ZIKtwUK0ReSpM3P9f",
+        "type": "track",
+        "uri": "spotify:track:7pNC5ZIKtwUK0ReSpM3P9f"
+      },
+      "name": "Black Widow",
+      "popularity": 66,
+      "preview_url": null,
+      "track_number": 10,
+      "type": "track",
+      "uri": "spotify:track:71vsEyBd4X1D5BUmLdFSVH"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6roFdX1y5BYSbp60OTJWMd"
+            },
+            "href": "https://api.spotify.com/v1/artists/6roFdX1y5BYSbp60OTJWMd",
+            "id": "6roFdX1y5BYSbp60OTJWMd",
+            "name": "Tim McGraw",
+            "type": "artist",
+            "uri": "spotify:artist:6roFdX1y5BYSbp60OTJWMd"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/76TexugJVi7Eg8suRNpQg6"
+        },
+        "href": "https://api.spotify.com/v1/albums/76TexugJVi7Eg8suRNpQg6",
+        "id": "76TexugJVi7Eg8suRNpQg6",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2736406a7adece4503e41512d5f",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e026406a7adece4503e41512d5f",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048516406a7adece4503e41512d5f",
+            "width": 64
+          }
+        ],
+        "name": "Tim McGraw And The Dancehall Doctors",
+        "release_date": "2002-11-26",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:76TexugJVi7Eg8suRNpQg6"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6roFdX1y5BYSbp60OTJWMd"
+          },
+          "href": "https://api.spotify.com/v1/artists/6roFdX1y5BYSbp60OTJWMd",
+          "id": "6roFdX1y5BYSbp60OTJWMd",
+          "name": "Tim McGraw",
+          "type": "artist",
+          "uri": "spotify:artist:6roFdX1y5BYSbp60OTJWMd"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 255973,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USCRB0201865"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/599y8O5L7DicaGwm1KUdrX"
+      },
+      "href": "https://api.spotify.com/v1/tracks/599y8O5L7DicaGwm1KUdrX",
+      "id": "599y8O5L7DicaGwm1KUdrX",
+      "is_local": false,
+      "is_playable": true,
+      "name": "She's My Kind Of Rain",
+      "popularity": 46,
+      "preview_url": "https://p.scdn.co/mp3-preview/52b51fe516a9a04f6841f9356719692508bbeddd?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 11,
+      "type": "track",
+      "uri": "spotify:track:599y8O5L7DicaGwm1KUdrX"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0bdfiayQAKewqEvaU6rXCv"
+            },
+            "href": "https://api.spotify.com/v1/artists/0bdfiayQAKewqEvaU6rXCv",
+            "id": "0bdfiayQAKewqEvaU6rXCv",
+            "name": "MØ",
+            "type": "artist",
+            "uri": "spotify:artist:0bdfiayQAKewqEvaU6rXCv"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/0kgy48FPwyVepPIaiO2w7G"
+        },
+        "href": "https://api.spotify.com/v1/albums/0kgy48FPwyVepPIaiO2w7G",
+        "id": "0kgy48FPwyVepPIaiO2w7G",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273bd58d7394f4103d9810c8edf",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02bd58d7394f4103d9810c8edf",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851bd58d7394f4103d9810c8edf",
+            "width": 64
+          }
+        ],
+        "name": "Nights With You",
+        "release_date": "2017-04-21",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:0kgy48FPwyVepPIaiO2w7G"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0bdfiayQAKewqEvaU6rXCv"
+          },
+          "href": "https://api.spotify.com/v1/artists/0bdfiayQAKewqEvaU6rXCv",
+          "id": "0bdfiayQAKewqEvaU6rXCv",
+          "name": "MØ",
+          "type": "artist",
+          "uri": "spotify:artist:0bdfiayQAKewqEvaU6rXCv"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 197494,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "GBARL1700537"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/5q5gzmbBS5yQzos2BvVr1t"
+      },
+      "href": "https://api.spotify.com/v1/tracks/5q5gzmbBS5yQzos2BvVr1t",
+      "id": "5q5gzmbBS5yQzos2BvVr1t",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Nights With You",
+      "popularity": 61,
+      "preview_url": "https://p.scdn.co/mp3-preview/47d05bccc19615cf21014c8421564e64d9ea8c67?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:5q5gzmbBS5yQzos2BvVr1t"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+            },
+            "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+            "id": "4NHQUGzhtTLFvgF5SZesLK",
+            "name": "Tove Lo",
+            "type": "artist",
+            "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/5Z5O36p7BivXzkucc0PAfw"
+        },
+        "href": "https://api.spotify.com/v1/albums/5Z5O36p7BivXzkucc0PAfw",
+        "id": "5Z5O36p7BivXzkucc0PAfw",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27370cd79659edf4d5fec0840b8",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0270cd79659edf4d5fec0840b8",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d0000485170cd79659edf4d5fec0840b8",
+            "width": 64
+          }
+        ],
+        "name": "Queen Of The Clouds",
+        "release_date": "2014-09-24",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:5Z5O36p7BivXzkucc0PAfw"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+          },
+          "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+          "id": "4NHQUGzhtTLFvgF5SZesLK",
+          "name": "Tove Lo",
+          "type": "artist",
+          "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 182346,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "SEUM71400059"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/3zK3kzz1U8KEa8v9Kj8hu8"
+      },
+      "href": "https://api.spotify.com/v1/tracks/3zK3kzz1U8KEa8v9Kj8hu8",
+      "id": "3zK3kzz1U8KEa8v9Kj8hu8",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Not On Drugs",
+      "popularity": 47,
+      "preview_url": null,
+      "track_number": 10,
+      "type": "track",
+      "uri": "spotify:track:3zK3kzz1U8KEa8v9Kj8hu8"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1l8Fu6IkuTP0U5QetQJ5Xt"
+            },
+            "href": "https://api.spotify.com/v1/artists/1l8Fu6IkuTP0U5QetQJ5Xt",
+            "id": "1l8Fu6IkuTP0U5QetQJ5Xt",
+            "name": "Fifth Harmony",
+            "type": "artist",
+            "uri": "spotify:artist:1l8Fu6IkuTP0U5QetQJ5Xt"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/0pF0oyuPNdOObniB1Ng0kW"
+        },
+        "href": "https://api.spotify.com/v1/albums/0pF0oyuPNdOObniB1Ng0kW",
+        "id": "0pF0oyuPNdOObniB1Ng0kW",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273d03fa6f4e758282b7920b5c8",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02d03fa6f4e758282b7920b5c8",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851d03fa6f4e758282b7920b5c8",
+            "width": 64
+          }
+        ],
+        "name": "7/27 (Deluxe)",
+        "release_date": "2016-05-27",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:0pF0oyuPNdOObniB1Ng0kW"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1l8Fu6IkuTP0U5QetQJ5Xt"
+          },
+          "href": "https://api.spotify.com/v1/artists/1l8Fu6IkuTP0U5QetQJ5Xt",
+          "id": "1l8Fu6IkuTP0U5QetQJ5Xt",
+          "name": "Fifth Harmony",
+          "type": "artist",
+          "uri": "spotify:artist:1l8Fu6IkuTP0U5QetQJ5Xt"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7c0XG5cIJTrrAgEC3ULPiq"
+          },
+          "href": "https://api.spotify.com/v1/artists/7c0XG5cIJTrrAgEC3ULPiq",
+          "id": "7c0XG5cIJTrrAgEC3ULPiq",
+          "name": "Ty Dolla $ign",
+          "type": "artist",
+          "uri": "spotify:artist:7c0XG5cIJTrrAgEC3ULPiq"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 214480,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USSM11600251"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/4tCtwWceOPWzenK2HAIJSb"
+      },
+      "href": "https://api.spotify.com/v1/tracks/4tCtwWceOPWzenK2HAIJSb",
+      "id": "4tCtwWceOPWzenK2HAIJSb",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Work from Home (feat. Ty Dolla $ign)",
+      "popularity": 78,
+      "preview_url": "https://p.scdn.co/mp3-preview/b2d6e6ea9163eb361f5406f75264de490243964a?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 2,
+      "type": "track",
+      "uri": "spotify:track:4tCtwWceOPWzenK2HAIJSb"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+            },
+            "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+            "id": "6M2wZ9GZgrQXHCFfjv46we",
+            "name": "Dua Lipa",
+            "type": "artist",
+            "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/01sfgrNbnnPUEyz6GZYlt9"
+        },
+        "href": "https://api.spotify.com/v1/albums/01sfgrNbnnPUEyz6GZYlt9",
+        "id": "01sfgrNbnnPUEyz6GZYlt9",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b2736b915e407b70e121e06fe979",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e026b915e407b70e121e06fe979",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d000048516b915e407b70e121e06fe979",
+            "width": 64
+          }
+        ],
+        "name": "Dua Lipa (Deluxe)",
+        "release_date": "2017-06-02",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:01sfgrNbnnPUEyz6GZYlt9"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+          },
+          "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+          "id": "6M2wZ9GZgrQXHCFfjv46we",
+          "name": "Dua Lipa",
+          "type": "artist",
+          "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 187957,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "GBAHT1600182"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/5eTNdkstwKaNahHf41fJ9u"
+      },
+      "href": "https://api.spotify.com/v1/tracks/5eTNdkstwKaNahHf41fJ9u",
+      "id": "5eTNdkstwKaNahHf41fJ9u",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Hotter Than Hell",
+      "popularity": 65,
+      "preview_url": "https://p.scdn.co/mp3-preview/1c70d94725848c1818803314ee6b776d126f9e41?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 3,
+      "type": "track",
+      "uri": "spotify:track:5eTNdkstwKaNahHf41fJ9u"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/01xiB0IlXMXy3wrrotgDnU"
+            },
+            "href": "https://api.spotify.com/v1/artists/01xiB0IlXMXy3wrrotgDnU",
+            "id": "01xiB0IlXMXy3wrrotgDnU",
+            "name": "Clint Mansell",
+            "type": "artist",
+            "uri": "spotify:artist:01xiB0IlXMXy3wrrotgDnU"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/2XnflgJ5byhSYuhDE3s2hc"
+        },
+        "href": "https://api.spotify.com/v1/albums/2XnflgJ5byhSYuhDE3s2hc",
+        "id": "2XnflgJ5byhSYuhDE3s2hc",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273b93de7ea70e8b2814167ea97",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02b93de7ea70e8b2814167ea97",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851b93de7ea70e8b2814167ea97",
+            "width": 64
+          }
+        ],
+        "name": "Noah [Music from the Motion Picture]",
+        "release_date": "2014-03-25",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:2XnflgJ5byhSYuhDE3s2hc"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/01xiB0IlXMXy3wrrotgDnU"
+          },
+          "href": "https://api.spotify.com/v1/artists/01xiB0IlXMXy3wrrotgDnU",
+          "id": "01xiB0IlXMXy3wrrotgDnU",
+          "name": "Clint Mansell",
+          "type": "artist",
+          "uri": "spotify:artist:01xiB0IlXMXy3wrrotgDnU"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 248040,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USNO11400154"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/56n8IKs5nYRg3UQp0eMPeU"
+      },
+      "href": "https://api.spotify.com/v1/tracks/56n8IKs5nYRg3UQp0eMPeU",
+      "id": "56n8IKs5nYRg3UQp0eMPeU",
+      "is_local": false,
+      "is_playable": true,
+      "name": "In the Beginning,There Was Nothing",
+      "popularity": 20,
+      "preview_url": "https://p.scdn.co/mp3-preview/4f703abb7f60c4f275c6f9555ac28a9a485b8c3b?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:56n8IKs5nYRg3UQp0eMPeU"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/5CDonRtIeV3ZYeE8nFjBUh"
+            },
+            "href": "https://api.spotify.com/v1/artists/5CDonRtIeV3ZYeE8nFjBUh",
+            "id": "5CDonRtIeV3ZYeE8nFjBUh",
+            "name": "James Rhodes",
+            "type": "artist",
+            "uri": "spotify:artist:5CDonRtIeV3ZYeE8nFjBUh"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/635sfn3tknH9uf1ZZX0Xlm"
+        },
+        "href": "https://api.spotify.com/v1/albums/635sfn3tknH9uf1ZZX0Xlm",
+        "id": "635sfn3tknH9uf1ZZX0Xlm",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b27314b2b7424da27e14d0f24a13",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e0214b2b7424da27e14d0f24a13",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d0000485114b2b7424da27e14d0f24a13",
+            "width": 64
+          }
+        ],
+        "name": "Five",
+        "release_date": "2014-06-02",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:635sfn3tknH9uf1ZZX0Xlm"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7vfydQ0nVBVgJ0ajs8EtRM"
+          },
+          "href": "https://api.spotify.com/v1/artists/7vfydQ0nVBVgJ0ajs8EtRM",
+          "id": "7vfydQ0nVBVgJ0ajs8EtRM",
+          "name": "Christoph Willibald Gluck",
+          "type": "artist",
+          "uri": "spotify:artist:7vfydQ0nVBVgJ0ajs8EtRM"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3m1zAAlMbuq1ZAHFggftkC"
+          },
+          "href": "https://api.spotify.com/v1/artists/3m1zAAlMbuq1ZAHFggftkC",
+          "id": "3m1zAAlMbuq1ZAHFggftkC",
+          "name": "Giovanni Sgambati",
+          "type": "artist",
+          "uri": "spotify:artist:3m1zAAlMbuq1ZAHFggftkC"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5CDonRtIeV3ZYeE8nFjBUh"
+          },
+          "href": "https://api.spotify.com/v1/artists/5CDonRtIeV3ZYeE8nFjBUh",
+          "id": "5CDonRtIeV3ZYeE8nFjBUh",
+          "name": "James Rhodes",
+          "type": "artist",
+          "uri": "spotify:artist:5CDonRtIeV3ZYeE8nFjBUh"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 284640,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "GBLLH1437113"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/3DnLGuX4YU3PGein8vo5Zt"
+      },
+      "href": "https://api.spotify.com/v1/tracks/3DnLGuX4YU3PGein8vo5Zt",
+      "id": "3DnLGuX4YU3PGein8vo5Zt",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Orfeo et Eurydice: Mélodie for Piano Solo",
+      "popularity": 51,
+      "preview_url": "https://p.scdn.co/mp3-preview/d75fe862bcb89597ccc4155dfce7bb64ab52e697?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 13,
+      "type": "track",
+      "uri": "spotify:track:3DnLGuX4YU3PGein8vo5Zt"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2VAnyOxzJuSAj7XIuEOT38"
+            },
+            "href": "https://api.spotify.com/v1/artists/2VAnyOxzJuSAj7XIuEOT38",
+            "id": "2VAnyOxzJuSAj7XIuEOT38",
+            "name": "AlunaGeorge",
+            "type": "artist",
+            "uri": "spotify:artist:2VAnyOxzJuSAj7XIuEOT38"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/3eSysZ5EvnyWZ2naPABIdd"
+        },
+        "href": "https://api.spotify.com/v1/albums/3eSysZ5EvnyWZ2naPABIdd",
+        "id": "3eSysZ5EvnyWZ2naPABIdd",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ab67616d0000b273e83e6c50431b7cbc6e762b51",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/ab67616d00001e02e83e6c50431b7cbc6e762b51",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ab67616d00004851e83e6c50431b7cbc6e762b51",
+            "width": 64
+          }
+        ],
+        "name": "Body Music (Deluxe)",
+        "release_date": "2013-01-01",
+        "release_date_precision": "day",
+        "total_tracks": 0,
+        "type": "album",
+        "uri": "spotify:album:3eSysZ5EvnyWZ2naPABIdd"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/2VAnyOxzJuSAj7XIuEOT38"
+          },
+          "href": "https://api.spotify.com/v1/artists/2VAnyOxzJuSAj7XIuEOT38",
+          "id": "2VAnyOxzJuSAj7XIuEOT38",
+          "name": "AlunaGeorge",
+          "type": "artist",
+          "uri": "spotify:artist:2VAnyOxzJuSAj7XIuEOT38"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 219240,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "GBUM71204849"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/7IdTIjPXUc7bJQyabnmQiT"
+      },
+      "href": "https://api.spotify.com/v1/tracks/7IdTIjPXUc7bJQyabnmQiT",
+      "id": "7IdTIjPXUc7bJQyabnmQiT",
+      "is_local": false,
+      "is_playable": true,
+      "name": "Your Drums, Your Love",
+      "popularity": 44,
+      "preview_url": null,
+      "track_number": 4,
+      "type": "track",
+      "uri": "spotify:track:7IdTIjPXUc7bJQyabnmQiT"
+    }
+  ],
+  "seeds": [
+    {
+      "initialPoolSize": 250,
+      "afterFilteringSize": 250,
+      "afterRelinkingSize": 248,
+      "id": "4NHQUGzhtTLFvgF5SZesLK",
+      "type": "ARTIST",
+      "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK"
+    },
+    {
+      "initialPoolSize": 249,
+      "afterFilteringSize": 249,
+      "afterRelinkingSize": 235,
+      "id": "0c6xIDDpzE81m2q797ordA",
+      "type": "TRACK",
+      "href": "https://api.spotify.com/v1/tracks/0c6xIDDpzE81m2q797ordA"
+    },
+    {
+      "initialPoolSize": 517,
+      "afterFilteringSize": 313,
+      "afterRelinkingSize": 309,
+      "id": "classical",
+      "type": "GENRE",
+      "href": null
+    },
+    {
+      "initialPoolSize": 999,
+      "afterFilteringSize": 313,
+      "afterRelinkingSize": 312,
+      "id": "country",
+      "type": "GENRE",
+      "href": null
+    }
+  ]
+}
