@@ -81,7 +81,7 @@ class SongForm extends Component {
 				acousticness: 0.5,
 				danceability: 0.5,
 				energy: 0.5,
-				loudness: 0.5,
+				loudness: -30.0,
 				instrumentalness: 0.5,
 				valence: 0.5,
 				duration: 660000,
@@ -109,6 +109,9 @@ class SongForm extends Component {
 			case "tempo":
 				convertedVal = event.target.value;
 				break;
+			case "loudness":
+				// 0-100 to -60.0-0 
+				convertedVal = ((parseFloat(event.target.value)/100)*60)-60;
 			default:
 				convertedVal = parseFloat(event.target.value) / 100;
 				break;
@@ -149,15 +152,15 @@ class SongForm extends Component {
 		return (
 			<div id="song_form_container" >
 			<a href='http://localhost:8888' > Login to Spotify </a>
-				<form action="https://accounts.spotify.com/authorize?client_id=39ca797415f84106a2925c00c50821f0&redirect_uri=http:%2F%2Flocalhost:3000%2Fvisualizer&scope=user-read-private%20user-read-email%20user-read-currently-playing%20user-read-playback-state&response_type=token" method="get" onSubmit={this.handleSubmit}>
+			<form action="https://accounts.spotify.com/authorize?client_id=39ca797415f84106a2925c00c50821f0&redirect_uri=http:%2F%2Flocalhost:3000%2Fvisualizer&scope=user-read-private%20user-read-email%20user-read-currently-playing%20user-read-playback-state&response_type=token" method="get" onSubmit={this.handleSubmit}>
 					Genres: <br />
 					<GenresSelector onGenreUpdate={this.handleGenreSelect} />
 					<br />
 					<br />
-                    <h2>Acousticness:{" "}</h2>
+                    <h2>Acousticness:{" "}
 											<span class="extra">
 										How acoustic a song is
-           (from folksy ballads to electronic beats)</span>
+           (from folksy ballads to electronic beats)</span></h2>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -166,10 +169,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                    <h2>Danceability:{" "}</h2>
+                    <h2>Danceability:{" "}
 											<span class="extra">
 										How much the song makes you want to dance
-(from lay in bed and groove to shake your hips and move)</span>
+(from lay in bed and groove to shake your hips and move)</span></h2>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -178,10 +181,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                  <h2>  Energy:{" "}</h2>
+                  <h2>  Energy:{" "}
 										<span class="extra">
 									The intensity and activity of a song
-(from soft and gentle to loud and noisy)</span>
+(from soft and gentle to loud and noisy)</span></h2>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -190,10 +193,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                  <h2>  Loudness:{" "}</h2>
+                  <h2>  Loudness:{" "}
 										<span class="extra">
 									How loud the song is
-(from tunes for sleep to screaming headbangers)</span>
+(from tunes for sleep to screaming headbangers)</span></h2>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -202,10 +205,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                  <h2>  Instrumentalness:{" "}</h2>
+                  <h2>  Instrumentalness:{" "}
 										<span class="extra">
 									Ratio of words to music
-(from spoken word to instrumental)</span>
+(from spoken word to instrumental)</span></h2>
 					<NumberSlider
 						min="0"
 						max="100"
@@ -214,10 +217,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                <h2>    Mood/Positivity:{" "}</h2>
+                <h2>    Mood/Positivity:{" "}
 									<span class="extra">
 								How (positive?) the song makes you feel
-				 (from breakup ballads to sunny wake-up tunes)</span>
+				 (from breakup ballads to sunny wake-up tunes)</span></h2>
 					<NumberSlider
 						min="0"
 						id="valence"
@@ -226,9 +229,9 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                <h2>    Duration (minutes):{" "}</h2>
+                <h2>    Duration (minutes):{" "}
 									<span class="extra">
-								How long the song is, in minutes</span>
+								How long the song is, in minutes</span> </h2>
            (0 to 20?)
 					<NumberSlider
 						min="1"
@@ -238,10 +241,10 @@ class SongForm extends Component {
 					/>
 					<br />
 					<br />
-                <h2>    Liveness:{" "}</h2>
+                <h2>    Liveness:{" "}
 									<span class="extra">
 								The presence of a live audience
-(from polished studio recordings to raging mosh pits)</span>
+(from polished studio recordings to raging mosh pits)</span> </h2>
 
 					<NumberSlider
 						min="0"
