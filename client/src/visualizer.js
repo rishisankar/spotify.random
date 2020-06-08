@@ -7,7 +7,11 @@ import { Form } from "react-bootstrap";
 import { spotifyApi } from './App.js'
 import './visualizer.css';
 import islandPath from "./models/visualizer/island.gltf";
-import catPath from "./models/visualizer/djcat.gltf";
+import hamsterPath from "./models/visualizer/hamster_dance.gltf";
+import chickPath from "./models/visualizer/chick_dance.gltf";
+import dogPath from "./models/visualizer/dog_dance.gltf";
+import mousePath from "./models/visualizer/mouse_dance.gltf";
+import pandaPath from "./models/visualizer/panda_dance.gltf";
 class Visualizer extends Component{
 	constructor(props) {
 		super(props);
@@ -32,7 +36,8 @@ class Visualizer extends Component{
 		this.getRecommendations();
 		var scene = new THREE.Scene();
 		var clock = new THREE.Clock();
-		var mixer;
+		var island_mixer, hamster_mixer, chick_mixer,
+			dog_mixer, mouse_mixer, panda_mixer;
 		var camera = new THREE.PerspectiveCamera(
 			75,
 			window.innerWidth / window.innerHeight,
@@ -48,62 +53,79 @@ class Visualizer extends Component{
 		camera.position.x = 1;
 		var islandLoader = new GLTFLoader();
 		islandLoader.load(islandPath, function (gltf) {
+			island_mixer = new THREE.AnimationMixer(gltf.scene);
+            island_mixer.clipAction(gltf.animations[0]).play();
 			scene.add(gltf.scene)
-
-			//lighting
-            var light = new THREE.DirectionalLight(0xdfebff, 1.3);
-            light.position.set(10, 50, 100);
-            light.position.multiplyScalar(1.3);
-
-            light.castShadow = true;
-
-            light.shadow.mapSize.width = 1024;
-            light.shadow.mapSize.height = 1024;
-
-            var d = 300;
-
-            light.shadow.camera.left = -d;
-            light.shadow.camera.right = d;
-            light.shadow.camera.top = d;
-            light.shadow.camera.bottom = -d;
-
-            light.shadow.camera.far = 1000;
-
-            scene.add(light);
 		});
 
-		var catLoader = new GLTFLoader();
-		catLoader.load(catPath, function (gltf) {
-			gltf.scene.position.y = 1;
-			gltf.scene.position.x = 1;
-			gltf.scene.position.z = 3;
-			gltf.scene.scale.set(.1,.1,.1);
+		var hamsterLoader = new GLTFLoader();
+		hamsterLoader.load(hamsterPath, function (gltf) {
+			hamster_mixer = new THREE.AnimationMixer(gltf.scene);
+            hamster_mixer.clipAction(gltf.animations[0]).play()
 			scene.add(gltf.scene)
-
-			//lighting
-            var light = new THREE.DirectionalLight(0xdfebff, 1.3);
-            light.position.set(10, 50, 100);
-            light.position.multiplyScalar(1.3);
-
-            light.castShadow = true;
-
-            light.shadow.mapSize.width = 1024;
-            light.shadow.mapSize.height = 1024;
-
-            var d = 300;
-
-            light.shadow.camera.left = -d;
-            light.shadow.camera.right = d;
-            light.shadow.camera.top = d;
-            light.shadow.camera.bottom = -d;
-
-            light.shadow.camera.far = 1000;
-
-            scene.add(light);
 		});
+
+		var chickLoader = new GLTFLoader();
+		chickLoader.load(chickPath, function (gltf) {
+			chick_mixer = new THREE.AnimationMixer(gltf.scene);
+            chick_mixer.clipAction(gltf.animations[0]).play()
+			scene.add(gltf.scene)
+		});
+
+		var dogLoader = new GLTFLoader();
+		dogLoader.load(dogPath, function (gltf) {
+			dog_mixer = new THREE.AnimationMixer(gltf.scene);
+            dog_mixer.clipAction(gltf.animations[0]).play()
+			scene.add(gltf.scene)
+		});
+
+		var mouseLoader = new GLTFLoader();
+		mouseLoader.load(mousePath, function (gltf) {
+			mouse_mixer = new THREE.AnimationMixer(gltf.scene);
+            mouse_mixer.clipAction(gltf.animations[0]).play()
+			scene.add(gltf.scene)
+		});
+
+		var pandaLoader = new GLTFLoader();
+		pandaLoader.load(pandaPath, function (gltf) {
+			panda_mixer = new THREE.AnimationMixer(gltf.scene);
+            panda_mixer.clipAction(gltf.animations[0]).play()
+			scene.add(gltf.scene)
+		});
+
+				//lighting
+        var light = new THREE.DirectionalLight(0xdfebff, 1.7);
+        light.position.set(10, 30, 60);
+        light.position.multiplyScalar(1.3);
+
+        light.castShadow = true;
+
+        light.shadow.mapSize.width = 1024;
+        light.shadow.mapSize.height = 1024;
+
+        var d = 300;
+
+        light.shadow.camera.left = -d;
+        light.shadow.camera.right = d;
+        light.shadow.camera.top = d;
+        light.shadow.camera.bottom = -d;
+
+        light.shadow.camera.far = 1000;
+
+        scene.add(light);
 
 		var animate = function () {
 			requestAnimationFrame(animate);
+
+            var delta = clock.getDelta();
+
+            if (island_mixer) island_mixer.update(delta);
+            if (hamster_mixer) hamster_mixer.update(delta);
+            if (panda_mixer) panda_mixer.update(delta);
+            if (chick_mixer) chick_mixer.update(delta);
+            if (mouse_mixer) mouse_mixer.update(delta);
+            if (dog_mixer) dog_mixer.update(delta);
+
 			renderer.render(scene,camera);
 		};
 		animate();
@@ -158,64 +180,59 @@ getRecommendations(){
 
 
 render() {
-	// return 		(
-	// 	<div className="App">
-	// 		<div id="track-list">
-	// 			<h1>Tracks</h1><br></br>
-	// 			<h2>{this.state.track_name.n1}</h2>
-	// 			<h3>{this.state.track_artist.a1}</h3>
-	// 			<img src={this.state.track_img.i1} />
-	// 			<h4>{ this.state.track_url.u1}</h4>
-	// 				<br></br>
-	// 			<audio
-	// 			        controls
-	// 			        src={ this.state.preview_url.p1}>
-	// 			            Your browser does not support the
-	// 			            <code>audio</code> element.
-	// 			    </audio>
-	// 			<br></br>
-	// 				<br></br>
-	// 					<br></br>
-	// 			<h2>{this.state.track_name.n2}</h2>
-	// 			<h3>{this.state.track_artist.a2}</h3>
-	// 			<img src={this.state.track_img.i2} />
-	// 			<h4>{ this.state.track_url.u2}</h4>
-	// 				<br></br>
-	// 			<audio
-	// 			        controls
-	// 			        src={ this.state.preview_url.p2}>
-	// 			            Your browser does not support the
-	// 			            <code>audio</code> element.
-	// 			    </audio>
-	// 			<br></br>
-	// 				<br></br>
-	// 					<br></br>
-	// 			<h2>{this.state.track_name.n3}</h2>
-	// 			<h3>{this.state.track_artist.a3}</h3>
-	// 			<img src={this.state.track_img.i3} />
-	// 			<h4>{ this.state.track_url.u3}</h4>
-	// 				<br></br>
-	// 			<audio
-	// 			        controls
-	// 			        src={ this.state.preview_url.p3}>
-	// 			            Your browser does not support the
-	// 			            <code>audio</code> element.
-	// 			    </audio>
-	// 			<br></br>
-	// 				<br></br>
-	// 					<br></br>
-	// 			token:
-	// 			<h4>{this.props.location.state.accessToken}</h4>
-	// 		</div>
-	// 		<div ref={(ref) => (this.mount = ref)} />
+	return 		(
+		<div className="App">
+			<div id="track-list">
+				<h1>Tracks</h1><br></br>
+				<h2>{this.state.track_name.n1}</h2>
+				<h3>{this.state.track_artist.a1}</h3>
+				<img src={this.state.track_img.i1} />
+				<h4>{ this.state.track_url.u1}</h4>
+					<br></br>
+				<audio
+				        controls
+				        src={ this.state.preview_url.p1}>
+				            Your browser does not support the
+				            <code>audio</code> element.
+				    </audio>
+				<br></br>
+					<br></br>
+						<br></br>
+				<h2>{this.state.track_name.n2}</h2>
+				<h3>{this.state.track_artist.a2}</h3>
+				<img src={this.state.track_img.i2} />
+				<h4>{ this.state.track_url.u2}</h4>
+					<br></br>
+				<audio
+				        controls
+				        src={ this.state.preview_url.p2}>
+				            Your browser does not support the
+				            <code>audio</code> element.
+				    </audio>
+				<br></br>
+					<br></br>
+						<br></br>
+				<h2>{this.state.track_name.n3}</h2>
+				<h3>{this.state.track_artist.a3}</h3>
+				<img src={this.state.track_img.i3} />
+				<h4>{ this.state.track_url.u3}</h4>
+					<br></br>
+				<audio
+				        controls
+				        src={ this.state.preview_url.p3}>
+				            Your browser does not support the
+				            <code>audio</code> element.
+				    </audio>
+				<br></br>
+					<br></br>
+						<br></br>
+			</div>
+			<div ref={(ref) => (this.mount = ref)} />
 
-	// 	</div>
+		</div>
 
 
-	// )
-	return (
-		<div ref={(ref) => (this.mount = ref)} />
-		)
+	)
 }
 }
 
